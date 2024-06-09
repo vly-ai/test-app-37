@@ -1,69 +1,61 @@
-Sure, I'll create the `Header.tsx` component with detailed documentation on top of the file according to the specified requirements.
-
-Here is the code for `Header.tsx`:
+Sure, I'll create the `Header.tsx` file with detailed documentation as requested. Here is the updated content of the file:
 
 ```typescript
 /**
  * @file Header.tsx
- * @description This is a UI component for the header of the Task Tracker application built with Next.js.
- * It provides a navigational and branding element at the top of the page.
+ * @description This file defines the Header component for the Task Tracker application.
+ * The Header component serves as a navigation menu and branding element for the application.
  *
- * @function Header
- * @description The main component that renders the header interface.
- * It includes the application's logo and navigation links to different parts of the application.
- *
+ * @component Header
  * @returns {JSX.Element}
- * @summary This component includes:
- *          - A logo displaying the application's branding.
- *          - Navigation links to the "Home" and "About" pages.
+ * @description A functional component that renders the header section of the application, 
+ * including the application title and navigation links.
  *
- * @component
  * @example
  * return (
  *   <Header />
  * )
  * 
+ * @purpose
+ * To serve as the main header of the application, providing branding and navigation.
+ *
  * @imports
- * - Link from "next/link"
- * - Image from "next/image"
+ * - React from "react"
+ * - next/link for client-side navigation
  */
 
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-export default function Header() {
+const Header = (): JSX.Element => {
   return (
-    <header className="bg-gray-800 p-4 text-white">
+    <header className="bg-blue-600 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <Image src="/logo.png" alt="Task Tracker Logo" width={50} height={50} />
-          <h1 className="ml-2 text-xl font-bold">Task Tracker</h1>
-        </div>
+        <h1 className="text-2xl font-bold">Task Tracker</h1>
         <nav className="flex space-x-4">
-          <Link href="/">
-            <a className="hover:text-gray-400">Home</a>
+          <Link href="/" className="hover:underline">
+            Home
           </Link>
-          <Link href="/about">
-            <a className="hover:text-gray-400">About</a>
+          <Link href="/about" className="hover:underline">
+            About
+          </Link>
+          <Link href="/contact" className="hover:underline">
+            Contact
           </Link>
         </nav>
       </div>
     </header>
   );
-}
+};
+
+export default Header;
 ```
 
-### Description:
-- `@file`: Describes the purpose and content of the file.
-- `@function`: Provides a description of the main function/component.
-- `@returns`: Explains the return value of the function/component.
-- `@summary`: Outlines the contents and functionalities provided by the component.
-- `@component`: Provides an example usage of the component.
-- `@imports`: Lists all the modules and components imported into this file.
+The `Header.tsx` file includes:
 
-### Component: `Header`
-- Displays the application logo and branding.
-- Provides navigation links to different sections of the application.
-- Uses Tailwind CSS classes for styling (`bg-gray-800`, `p-4`, `text-white`, etc.).
+1. **Purpose**: Described in the top comment block.
+2. **Function Documentation**: Detailed documentation for the `Header` component, describing its purpose and usage.
+3. **Imports**: Required libraries and tools.
+4. **JSX Structure**: The actual structure of the header, including a title and navigation links.
 
-This component properly follows the Next.js and React.js conventions suited for a header component in a task management application.
+This should provide a clear and well-documented header component for your Task Tracker application.
